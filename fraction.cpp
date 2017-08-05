@@ -42,7 +42,61 @@ namespace mathpp {
         return result;
     }
 
+    Fraction Fraction::operator+ (const double& other) {
+        Fraction fother (other);
+        int den = denominator * fother.denominator;
+        int num1 = numerator * fother.denominator;
+        int num2 = fother.numerator * denominator;
+        Fraction result (num1+num2, den);
+        return result;
+    }
 
+    Fraction Fraction::operator- (const Fraction& other) {
+        int den = denominator * other.denominator;
+        int num1 = numerator * other.denominator;
+        int num2 = other.numerator * denominator;
+        Fraction result (num1-num2, den);
+        return result;
+    }
+
+    Fraction Fraction::operator- (const double& other) {
+        Fraction fother (other);
+        int den = denominator * fother.denominator;
+        int num1 = numerator * fother.denominator;
+        int num2 = fother.numerator * denominator;
+        Fraction result (num1-num2, den);
+        return result;
+    }
+
+    Fraction Fraction::operator* (const Fraction& other) {
+        int num = numerator * other.numerator;
+        int den = denominator * other.denominator;
+        Fraction result (num, den);
+        return result;
+    }
+
+    Fraction Fraction::operator* (const double& other) {
+        Fraction fother (other);
+        int num = numerator * fother.numerator;
+        int den = denominator * fother.denominator;
+        Fraction result (num, den);
+        return result;
+    }
+
+    Fraction Fraction::operator/ (const Fraction& other) {
+        int num = numerator * other.denominator;
+        int den = denominator * other.numerator;
+        Fraction result (num, den);
+        return result;
+    }
+
+    Fraction Fraction::operator/ (const double& other) {
+        Fraction fother (other);
+        int num = numerator * fother.denominator;
+        int den = denominator * fother.numerator;
+        Fraction result (num, den);
+        return result;
+    }
 
 
     Fraction::operator std::string() const {
