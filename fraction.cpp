@@ -98,6 +98,26 @@ namespace mathpp {
         return result;
     }
 
+    Fraction operator+ (const double& other, const Fraction& fra) {
+        Fraction fother (other);
+        return fother + fra;
+    }
+
+    Fraction operator- (const double& other, const Fraction& fra) {
+        Fraction fother (other);
+        return fother - fra;
+    }
+
+    Fraction operator* (const double& other, const Fraction& fra) {
+        Fraction fother (other);
+        return fother * fra;
+    }
+
+    Fraction operator/ (const double& other, const Fraction& fra) {
+        Fraction fother (other);
+        return fother / fra;
+    }
+
 
     Fraction::operator std::string() const {
     	std::stringstream stream;
